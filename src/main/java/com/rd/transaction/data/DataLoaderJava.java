@@ -4,9 +4,9 @@ import kotlin.Triple;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.*;
 
-import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
-import java.net.URL;
+import java.io.InputStream;
 import java.util.List;
 import java.util.Spliterator;
 import java.util.Spliterators;
@@ -31,11 +31,11 @@ public class DataLoaderJava {
 
     public Supplier<Stream<Triple<String, String, String>>> getTransactionData() throws IOException, InvalidFormatException {
         List<Triple<String, String, String>> list;
-        URL resource = DataLoaderJava.class.getResource(dataFile);
-        if (resource == null) {
-            resource = new File(dataFile).toURI().toURL();
+        InputStream resourceAsStream = getClass().getResourceAsStream(dataFile);
+        if (resourceAsStream == null) {
+            resourceAsStream = new FileInputStream(dataFile);
         }
-        try (final Workbook workbook = WorkbookFactory.create(new File(resource.getFile()))) {
+        try (final Workbook workbook = WorkbookFactory.create(resourceAsStream)) {
             final Sheet sheet = workbook.getSheetAt(0);
             final Stream<Row> rowStream =
                     StreamSupport.stream(Spliterators.spliteratorUnknownSize(sheet.iterator(), Spliterator.ORDERED), false);

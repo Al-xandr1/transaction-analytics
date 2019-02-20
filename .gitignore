@@ -1,7 +1,6 @@
 .class
 .gradle/
 build/
-gradle/
 out/
 *.iml
 *.ipr

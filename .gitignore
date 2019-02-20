@@ -1,0 +1,9 @@
+.class
+.gradle/
+build.gradle.kts
+build/
+gradle/
+out/
+*.iml
+*.ipr
+*.iws

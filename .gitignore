@@ -1,6 +1,5 @@
 .class
 .gradle/
-build.gradle.kts
 build/
 gradle/
 out/

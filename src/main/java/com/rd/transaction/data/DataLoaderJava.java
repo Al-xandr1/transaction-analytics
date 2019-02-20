@@ -26,12 +26,15 @@ public class DataLoaderJava {
     }
 
     public DataLoaderJava(String dataFile) {
-        this.dataFile = dataFile;
+        this.dataFile = (dataFile == null || dataFile.trim().isEmpty()) ? DEFAULT_FILE_NAME : dataFile;
     }
 
     public Supplier<Stream<Triple<String, String, String>>> getTransactionData() throws IOException, InvalidFormatException {
         List<Triple<String, String, String>> list;
-        final URL resource = DataLoaderJava.class.getResource(dataFile);
+        URL resource = DataLoaderJava.class.getResource(dataFile);
+        if (resource == null) {
+            resource = new File(dataFile).toURI().toURL();
+        }
         try (final Workbook workbook = WorkbookFactory.create(new File(resource.getFile()))) {
             final Sheet sheet = workbook.getSheetAt(0);
             final Stream<Row> rowStream =

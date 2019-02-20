@@ -12,7 +12,8 @@ import kotlin.streams.toList
 class DataLoader(private val dataFile: String = "/dataset_remain.xls") {
 
     fun getTransactionData(): () -> Stream<Triple<String, String, String>> {
-        val resource = javaClass.getResource(dataFile)
+        val resource = javaClass.getResource(dataFile) ?: File(dataFile).toURI().toURL()
+
         val workbook = WorkbookFactory.create(File(resource.file))
         workbook.use {
             val sheet = workbook.getSheetAt(0)

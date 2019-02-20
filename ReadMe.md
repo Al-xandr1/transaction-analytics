@@ -37,4 +37,4 @@ JVM платформой, поэтому можно вызывать любые 
 2. Для запуска реализации Kotlin нужно в IDEA вызвать com.rd.transaction.Main.kt из исходников
 3. Для запуска из дистрибутива нужно: 
 - Собрать проект
-- Запустить run.sh из дистрибутива ./build/distribution/transaction-analytics-1.0-SNAPSHOT.zip 
+- Запустить run.sh из дистрибутива ./build/distribution/transaction-analytics-1.0-SNAPSHOT.zip (запускается реализация Java)

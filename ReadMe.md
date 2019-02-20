@@ -38,3 +38,6 @@ JVM платформой, поэтому можно вызывать любые 
 3. Для запуска из дистрибутива нужно: 
 - Собрать проект
 - Запустить run.sh из дистрибутива ./build/distribution/transaction-analytics-1.0-SNAPSHOT.zip (запускается реализация Java)
+
+### Результат 
+[Графики](./doc/Result.png?raw=true "Graphics")

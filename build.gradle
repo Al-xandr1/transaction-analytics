@@ -28,7 +28,6 @@ compileTestKotlin {
     kotlinOptions.jvmTarget = "1.8"
 }
 
-// Task "distZip" added by plugin "java-library-distribution":
 distZip.shouldRunAfter(build)
 
 jar {

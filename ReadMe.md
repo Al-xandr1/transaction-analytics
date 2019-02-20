@@ -40,4 +40,4 @@ JVM платформой, поэтому можно вызывать любые 
 - Запустить run.sh из дистрибутива ./build/distribution/transaction-analytics-1.0-SNAPSHOT.zip (запускается реализация Java)
 
 ### Результат 
-[Графики](./doc/Result.png?raw=true "Graphics")
+![Графики](./doc/Result.png)

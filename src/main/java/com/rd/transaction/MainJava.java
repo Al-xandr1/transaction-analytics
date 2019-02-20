@@ -22,9 +22,16 @@ import static com.rd.transaction.data.AnalyzerJava.getParsed;
 public class MainJava {
 
     public static void main(String[] args) throws IOException, InvalidFormatException {
+        String dataFile;
+        if (args.length == 0) {
+            dataFile = "/dataset_remain.xls";
+        } else {
+            dataFile = args[0];
+        }
+
         // Load data
         Supplier<Stream<Triple<String, String, String>>> loader =
-                new DataLoaderJava("/dataset_remain.xls")
+                new DataLoaderJava(dataFile)
                         .getTransactionData();
 
         // Compute the problem's solution

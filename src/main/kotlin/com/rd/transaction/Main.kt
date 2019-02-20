@@ -12,10 +12,10 @@ import java.time.format.FormatStyle
 import java.util.stream.Stream
 
 
-fun main() {
+fun main(args: Array<String>) {
     // Load data
     val transactionData: () -> Stream<Triple<String, String, String>> =
-        DataLoader("/dataset_remain.xls").getTransactionData()
+        DataLoader(if (args.isEmpty()) "/dataset_remain.xls" else args[0]).getTransactionData()
 
     // Compute the problem's solution
     val result =

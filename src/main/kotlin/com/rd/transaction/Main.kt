@@ -23,7 +23,7 @@ fun main() {
             .analyze(transactionData())
 
     // Drawing the charts
-    ChartApplication.chart = ChartApplication.Companion.Chart(result)
+    ChartApplication.chart = ChartApplication.Companion.Chart(result, title = "Account balance by date. Kotlin")
     Application.launch(ChartApplication::class.java)
 }
 

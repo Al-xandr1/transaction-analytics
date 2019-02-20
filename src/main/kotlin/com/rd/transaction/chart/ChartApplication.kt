@@ -19,7 +19,7 @@ class ChartApplication : Application() {
         xAxis.label = chart!!.xLable
         yAxis.label = chart!!.yLable
         val lineChart = LineChart(xAxis, yAxis)
-        lineChart.title = "${chart!!.title}. Charts"
+        lineChart.title = "Charts"
 
         chart!!.transactionDataByAccount.forEach {
             //defining a series

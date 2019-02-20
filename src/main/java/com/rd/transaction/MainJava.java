@@ -33,7 +33,7 @@ public class MainJava {
                         .analyze(loader.get());
 
         // Drawing the charts
-        ChartApplicationJava.chart = new ChartApplicationJava.Chart(result, "Account balance by date", "Date", "Balance");
+        ChartApplicationJava.chart = new ChartApplicationJava.Chart(result, "Account balance by date. Java", "Date", "Balance");
         Application.launch(ChartApplicationJava.class);
     }
 }

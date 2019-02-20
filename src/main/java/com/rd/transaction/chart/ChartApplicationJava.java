@@ -26,7 +26,7 @@ public class ChartApplicationJava extends Application {
         yAxis.setLabel(chart.yLable);
         final LineChart lineChart = new LineChart(xAxis, yAxis);
 
-        lineChart.setTitle(String.format("%s. Charts", chart.title));
+        lineChart.setTitle("Charts");
         for (Map.Entry<String, List<Pair<LocalTime, Double>>> entry : chart.transactionDataByAccount.entrySet()) {
             //defining a series
             final XYChart.Series<String, Number> series = new XYChart.Series<>();
